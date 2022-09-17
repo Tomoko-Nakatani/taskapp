@@ -16,12 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KdD-SO-4kn">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KdD-SO-4kn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" id="FOC-Bg-fDS">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="aJw-RL-TnO" detailTextLabel="gQh-VQ-7eJ" style="IBUITableViewCellStyleSubtitle" id="i9G-uc-tWB">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i9G-uc-tWB" id="8WD-dz-EAj">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -64,6 +69,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="search" destination="FOC-Bg-fDS" id="F5U-yH-3AA"/>
                         <outlet property="tableView" destination="KdD-SO-4kn" id="Iyg-WA-0b5"/>
                         <segue destination="Lq1-NM-q6n" kind="show" identifier="cellSegue" id="Cgv-hu-tgr"/>
                     </connections>
@@ -80,7 +86,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6r-Xc-7Ht">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6r-Xc-7Ht">
                                 <rect key="frame" x="10" y="98" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -91,29 +97,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UUk-vy-K9e">
-                                <rect key="frame" x="10" y="204" width="394" height="120"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUk-vy-K9e">
+                                <rect key="frame" x="10" y="247.5" width="394" height="120"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="tintColor" systemColor="systemGray2Color"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="oVK-ai-64K"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJd-kh-ITQ">
-                                <rect key="frame" x="10" y="173" width="394" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="uba-0u-WT9">
-                                <rect key="frame" x="0.0" y="334" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="377.5" width="414" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="DiU-hz-0sg"/>
                                 </constraints>
                             </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DL8-9f-rWh">
+                                <rect key="frame" x="10" y="173" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJd-kh-ITQ">
+                                <rect key="frame" x="10" y="217" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AwF-bi-3zl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -122,21 +135,27 @@
                             <constraint firstAttribute="trailing" secondItem="uba-0u-WT9" secondAttribute="trailing" id="1ar-Km-8oo"/>
                             <constraint firstItem="Uxp-PG-jwP" firstAttribute="top" secondItem="X6r-Xc-7Ht" secondAttribute="bottom" constant="10" id="8vo-QV-3rU"/>
                             <constraint firstItem="UUk-vy-K9e" firstAttribute="leading" secondItem="AwF-bi-3zl" secondAttribute="leading" constant="10" id="9lH-kc-acb"/>
+                            <constraint firstItem="DL8-9f-rWh" firstAttribute="top" secondItem="Uxp-PG-jwP" secondAttribute="bottom" constant="10" id="DHo-1U-xpw"/>
                             <constraint firstItem="AwF-bi-3zl" firstAttribute="trailing" secondItem="UUk-vy-K9e" secondAttribute="trailing" constant="10" id="JNS-qD-Xx2"/>
+                            <constraint firstItem="AwF-bi-3zl" firstAttribute="trailing" secondItem="DL8-9f-rWh" secondAttribute="trailing" constant="10" id="KXX-LN-9aa"/>
                             <constraint firstItem="uba-0u-WT9" firstAttribute="top" secondItem="UUk-vy-K9e" secondAttribute="bottom" constant="10" id="L89-zK-RFj"/>
                             <constraint firstItem="X6r-Xc-7Ht" firstAttribute="top" secondItem="AwF-bi-3zl" secondAttribute="top" constant="10" id="ODN-lE-R8A"/>
-                            <constraint firstItem="mJd-kh-ITQ" firstAttribute="top" secondItem="Uxp-PG-jwP" secondAttribute="bottom" constant="10" id="TkE-94-43F"/>
+                            <constraint firstItem="uba-0u-WT9" firstAttribute="top" secondItem="UUk-vy-K9e" secondAttribute="bottom" constant="10" id="Qth-hN-lZF"/>
+                            <constraint firstItem="DL8-9f-rWh" firstAttribute="leading" secondItem="AwF-bi-3zl" secondAttribute="leading" constant="10" id="QyG-hN-YIh"/>
                             <constraint firstItem="uba-0u-WT9" firstAttribute="leading" secondItem="AwF-bi-3zl" secondAttribute="leading" id="UI5-ps-KWS"/>
                             <constraint firstItem="AwF-bi-3zl" firstAttribute="trailing" secondItem="X6r-Xc-7Ht" secondAttribute="trailing" constant="10" id="ad3-qM-WvV"/>
                             <constraint firstItem="Uxp-PG-jwP" firstAttribute="leading" secondItem="AwF-bi-3zl" secondAttribute="leading" constant="10" id="eFx-KH-KOM"/>
+                            <constraint firstItem="UUk-vy-K9e" firstAttribute="top" secondItem="mJd-kh-ITQ" secondAttribute="bottom" constant="10" id="hBk-4I-gCZ"/>
                             <constraint firstItem="mJd-kh-ITQ" firstAttribute="leading" secondItem="AwF-bi-3zl" secondAttribute="leading" constant="10" id="hWm-sg-Bfv"/>
                             <constraint firstItem="UUk-vy-K9e" firstAttribute="top" secondItem="mJd-kh-ITQ" secondAttribute="bottom" constant="10" id="hmH-Q4-tSf"/>
                             <constraint firstItem="AwF-bi-3zl" firstAttribute="trailing" secondItem="mJd-kh-ITQ" secondAttribute="trailing" constant="10" id="k45-rS-Xua"/>
+                            <constraint firstItem="mJd-kh-ITQ" firstAttribute="top" secondItem="DL8-9f-rWh" secondAttribute="bottom" constant="10" id="otU-ar-Xei"/>
                             <constraint firstItem="AwF-bi-3zl" firstAttribute="trailing" secondItem="Uxp-PG-jwP" secondAttribute="trailing" constant="10" id="vZD-MW-skp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="det-gc-7j5"/>
                     <connections>
+                        <outlet property="categoryTextField" destination="DL8-9f-rWh" id="TO6-0M-zb6"/>
                         <outlet property="contentsTextView" destination="UUk-vy-K9e" id="mZB-lv-Gx8"/>
                         <outlet property="datePicker" destination="uba-0u-WT9" id="V3Y-D4-9wQ"/>
                         <outlet property="titleTextField" destination="Uxp-PG-jwP" id="giV-VB-rNH"/>
@@ -175,6 +194,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
